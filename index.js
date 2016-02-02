@@ -29,7 +29,7 @@ module.exports = {
 		whitelist.currentTime = module.exports.createDateTime(options.currentTime || new Date())
 
 		for (var i in whitelist) {
-			newICS = ics.replace('---' + i + '---', (options[i] || whitelist[i]))
+			newICS = newICS.replace('---' + i + '---', (options[i] || whitelist[i]))
 		}
 
 		return newICS
