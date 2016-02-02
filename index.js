@@ -8,6 +8,7 @@ var fs = require('fs'),
 module.exports = {
 	createICS: function (options) {
 		var newICS = ics,
+			uuid = String((new Date()).getTime()),
 			whitelist = {
 				'organizerName':'',
 				'organizerEmail':'',
@@ -16,18 +17,27 @@ module.exports = {
 				'body':'',
 				'subject':'',
 				'location':'',
-				'uuid': '',
+				'uuid': uuid.substr(uuid.length-9),
 				'start': '',
 				'end': '',
 				'currentTime': ''
 			}
 
+
+		whitelist.start = module.exports.createDateTime(options.start || new Date())
+		whitelist.end = module.exports.createDateTime(options.end || new Date())
+		whitelist.currentTime = module.exports.createDateTime(options.currentTime || new Date())
+		
 		for (var i in whitelist) {
 			newICS = ics.replace('---' + i + '---', (options[i] || whitelist[i]))
 		}
 
 		return newICS
 	},
+
+	createDateTime: function (date) {
+		return date.toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z')
+	},	
 
 	createNodemailerAttachment: : function (options, filename) {
 		return {
@@ -42,18 +52,3 @@ module.exports = {
 	}
 }
 	
-/*
-{
-	'organizerName':'Shane Gadsby',
-	'organizerEmail':'schme16@gmail.com',
-	'attendeeName':'Shane Gadsby',
-	'attendeeEmail':'Shane.Gadsby@usq.edu.au',
-	'body':'This is just a test - 1',
-	'subject':'Test event - 1',
-	'location':'the ether - 1',
-	'uuid': String(new Date().getTime()).substr(0,9),
-	'start': Date.create().toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z'),
-	'end': Date.create().addMinutes(30).toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z'),
-	'currentTime': Date.create().toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z')
-}
-*/	
