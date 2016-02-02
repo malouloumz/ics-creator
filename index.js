@@ -6,7 +6,7 @@ var fs = require('fs'),
 
 
 module.exports = {
-	createICS: function (options) {
+	createICS: function createICS (options) {
 		var newICS = ics,
 			uuid = String((new Date()).getTime()),
 			whitelist = {
@@ -27,7 +27,7 @@ module.exports = {
 		whitelist.start = module.exports.createDateTime(options.start || new Date())
 		whitelist.end = module.exports.createDateTime(options.end || new Date())
 		whitelist.currentTime = module.exports.createDateTime(options.currentTime || new Date())
-		
+
 		for (var i in whitelist) {
 			newICS = ics.replace('---' + i + '---', (options[i] || whitelist[i]))
 		}
@@ -35,11 +35,11 @@ module.exports = {
 		return newICS
 	},
 
-	createDateTime: function (date) {
+	createDateTime: function createDateTime (date) {
 		return date.toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z')
 	},	
 
-	createNodemailerAttachment: : function (options, filename) {
+	createNodemailerAttachment: function createNodemailerAttachment (options, filename) {
 		return {
 			filename: (filename || 'event_' + Date().getTime()) + '.ics',
 			encoding: 'base64',
