@@ -1,15 +1,29 @@
 {
   "name": "ics-creator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helps create Outlook events that are nodemailer compatible",
   "main": "index.js",
+  "dependencies": {
+    "buildmail": "git+https://github.com/schme16/buildmail.git",
+    "libbase64": "^0.1.0"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schme16/ics-creator.git"
+  },
+  "keywords": [
+    "ics",
+    "nodemailer",
+    "outlook"
+  ],
   "author": "Shane Gadsby <schme16@gmail.com>",
-  "license": "ISC",
-  "repository": "https://github.com/schme16/ics-creator.git",
-  "dependencies": {
-    "libbase64": "^0.1.0"
-  }
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schme16/ics-creator/issues"
+  },
+  "homepage": "https://github.com/schme16/ics-creator#readme"
 }
