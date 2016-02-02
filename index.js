@@ -24,9 +24,10 @@ module.exports = {
 			}
 
 
-		whitelist.start = module.exports.createDateTime(options.start || new Date())
-		whitelist.end = module.exports.createDateTime(options.end || new Date())
-		whitelist.currentTime = module.exports.createDateTime(options.currentTime || new Date())
+		options.start = module.exports.createDateTime(options.start || new Date())
+		options.end = module.exports.createDateTime(options.end || new Date())
+		options.currentTime = module.exports.createDateTime(options.currentTime || new Date())
+
 
 		for (var i in whitelist) {
 			newICS = newICS.replace('---' + i + '---', (options[i] || whitelist[i]))
