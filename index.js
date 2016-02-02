@@ -53,3 +53,21 @@ module.exports = {
 	}
 }
 	
+
+/*
+
+ics.createNodemailerAttachment({
+	'organizerName':'Shane Gadsby',
+	'organizerEmail':'schme16@gmail.com',
+	'attendeeName':'Shane Gadsby',
+	'attendeeEmail':'Shane.Gadsby@usq.edu.au',
+	'body':'This is just a test - 1',
+	'subject':'Test event - 1',
+	'location':'the ether - 1',
+	'uuid': String(new Date().getTime()).substr(0,-9),
+	'start': Date.create(),
+	'end': Date.create().addMinutes(30),
+	'currentTime': Date.create()
+},'event')
+
+*/	
