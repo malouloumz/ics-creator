@@ -1,7 +1,7 @@
 "use strict"
 
 var fs = require('fs'),
-	ics = fs.readFileSync('template.ics').toString('utf8'),
+	ics = fs.readFileSync(__dirname + '/template.ics').toString('utf8'),
 	libbase64 = require('libbase64')	
 
 
