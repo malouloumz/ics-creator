@@ -1,12 +1,9 @@
 {
   "name": "ics-creator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Helps create Outlook events that are nodemailer compatible",
   "main": "index.js",
-  "dependencies": {
-    "buildmail": "git+https://github.com/schme16/buildmail.git",
-    "libbase64": "^0.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

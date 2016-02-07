@@ -1,8 +1,7 @@
 "use strict"
 
 var fs = require('fs'),
-	ics = fs.readFileSync(__dirname + '/template.ics').toString('utf8'),
-	libbase64 = require('libbase64')	
+	ics = fs.readFileSync(__dirname + '/template.ics').toString('utf8')
 
 
 module.exports = {
@@ -40,34 +39,27 @@ module.exports = {
 		return date.toISOString().replace(/-|:/g, '').slice(0, 13).concat('00Z')
 	},	
 
-	createNodemailerAttachment: function createNodemailerAttachment (options, filename) {
+	createNodemailerEvent: function createNodemailerAttachment (options) {
 		return {
-			filename: (filename || 'event_' + Date().getTime()) + '.ics',
-			encoding: 'base64',
-			content: libbase64.encode(module.exports.createICS(options)),
-			headers: {
-				'Content-Transfer-Encoding': 'base64',
-				'Content-Type': 'text/calendar; charset="utf-8"; method=REQUEST',
-			}
+			method: 'request',
+			content: module.exports.createICS(options)
 		}
 	}
 }
 	
-
+/*Very basic example*/
 /*
-
-ics.createNodemailerAttachment({
-	'organizerName':'Shane Gadsby',
-	'organizerEmail':'schme16@gmail.com',
-	'attendeeName':'Shane Gadsby',
-	'attendeeEmail':'Shane.Gadsby@usq.edu.au',
-	'body':'This is just a test - 1',
-	'subject':'Test event - 1',
-	'location':'the ether - 1',
-	'uuid': String(new Date().getTime()).substr(0,-9),
-	'start': Date.create(),
-	'end': Date.create().addMinutes(30),
-	'currentTime': Date.create()
-},'event')
-
+	ics.createNodemailerEvent({
+		'organizerName':'Shane Gadsby',
+		'organizerEmail':'schme16@gmail.com',
+		'attendeeName':'Shane Gadsby',
+		'attendeeEmail':'Shane.Gadsby@usq.edu.au',
+		'body':'This is just a test - 1',
+		'subject':'Test event - 1',
+		'location':'the ether - 1',
+		'uuid': String(new Date().getTime()).substr(0,-9),
+		'start': Date.create(),
+		'end': Date.create().addMinutes(30),
+		'currentTime': Date.create()
+	},'event')
 */	
