@@ -43,7 +43,7 @@ module.exports = {
 
 	createNodemailerEvent: function createNodemailerAttachment (options) {
 		return {
-			method: 'request',
+			method: options.method,
 			content: module.exports.createICS(options)
 		}
 	}
