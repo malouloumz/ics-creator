@@ -16,12 +16,15 @@ module.exports = {
 				'body':'',
 				'subject':'',
 				'location':'',
-				'uuid': uuid.substr(uuid.length-9),
+				'uuid': '123456789',
 				'status': 'CONFIRMED',
 				'start': '',
 				'end': '',
-				'method': '',
-				'currentTime': 'METHOD',
+				'method': 'REQUEST',
+				'attach': '',
+				'comment': '',
+				'sequence': '0',
+				'currentTime': '',
 			}
 
 
