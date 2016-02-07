@@ -17,6 +17,7 @@ module.exports = {
 				'subject':'',
 				'location':'',
 				'uuid': uuid.substr(uuid.length-9),
+				'status': 'CONFIRMED',
 				'start': '',
 				'end': '',
 				'currentTime': ''

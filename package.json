@@ -1,6 +1,6 @@
 {
   "name": "ics-creator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Helps create Outlook events that are nodemailer compatible",
   "main": "index.js",
   "dependencies": {},
