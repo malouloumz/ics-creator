@@ -34,7 +34,7 @@ module.exports = {
 
 
 		for (var i in whitelist) {
-			newICS = newICS.replace('---' + i + '---', (options[i] || whitelist[i]))
+			newICS = newICS.replace(new RegExp('---' + i + '---', 'g'), (options[i] || whitelist[i]))
 		}
 
 		return newICS
