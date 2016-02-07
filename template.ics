@@ -1,7 +1,8 @@
 BEGIN:VCALENDAR
-METHOD:REQUEST
-PRODID:Microsoft Exchange Server 2010
 VERSION:2.0
+METHOD:---method---
+PRODID:Microsoft Exchange Server 2010
+X-WR-RELCALID:---uuid---
 BEGIN:VTIMEZONE
 TZID:E. Australia Standard Time
 BEGIN:STANDARD

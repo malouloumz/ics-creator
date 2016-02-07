@@ -20,7 +20,8 @@ module.exports = {
 				'status': 'CONFIRMED',
 				'start': '',
 				'end': '',
-				'currentTime': ''
+				'method': '',
+				'currentTime': 'METHOD',
 			}
 
 
